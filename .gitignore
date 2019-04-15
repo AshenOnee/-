@@ -2,3 +2,4 @@ node_modules/
 dist/
 app/vendor/
 app/*.html
+app/package-lock.json
