@@ -1,0 +1,13 @@
+include ../../../node_modules/bemto.pug/bemto.pug
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(title="index")
+    body
+        -var list = ["main"]
+        +b('ul').index-list.g
+            each item in list
+                +e('li').item
+                    a( href = item + '.html' )= item  
+ 

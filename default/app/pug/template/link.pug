@@ -1,0 +1,9 @@
+mixin style()
+    -var styles = ['vendor.min.css', 'common.min.css']
+    each item in styles
+        link(rel='stylesheet' type="text/css" href='./assets/css/' + item)
+
+mixin script()
+    -var scripts = ['vendor.min.js', 'common.min.js']
+    each item in scripts
+        script(type="text/javascript" src='./assets/js/' + item)

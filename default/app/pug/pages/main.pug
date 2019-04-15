@@ -1,0 +1,17 @@
+include ../template/bem.pug
+include ../template/link.pug
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		+style()
+		+script()
+	body
+		+b.block
+			+e.elem--modif
+				+e('a')(href="#").class
+				+b.block-2
+					+e.elem
+						| njjnjk
+						| bhkbk

@@ -1,0 +1,15 @@
+@import "../../config/variables";
+
+.block {
+	color: $color-black;
+
+	&__elem {
+		&--modif {}
+
+		.active {}
+
+		@media (max-width: 480px) {
+
+		}
+	}
+}

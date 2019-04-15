@@ -1,0 +1,1 @@
+{"version":3,"sources":["b-test/style.scss"],"names":[],"mappings":"AAEA,M,CACC,S","file":"common.min.css","sourcesContent":["@import \"../../config/variables\";\r\n\r\n.block {\r\n\tcolor: $color-black;\r\n\r\n\t&__elem {\r\n\t\t&--modif {}\r\n\r\n\t\t.active {}\r\n\r\n\t\t@media (max-width: 480px) {\r\n\r\n\t\t}\r\n\t}\r\n}\r\n"]}
