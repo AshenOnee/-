@@ -3,3 +3,4 @@ dist/
 app/vendor/
 app/*.html
 default/package-lock.json
+package-lock.json
