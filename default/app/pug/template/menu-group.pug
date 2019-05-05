@@ -1,0 +1,71 @@
+//
+   Created by Islam on 15.04.2019.
++b.menu-group
+    +b.menu
+        +e.container
+            a(href='#').home
+                img(src='../../assets/images/house.png').house-ico
+            +e.map
+                +e.map-text Карта сайта
+                +e.map-rectangle ▼
+            +e.service-links
+                a(href='#').service-link Авиабилеты
+                a(href='#').service-link Ж\Д билеты
+                a(href='#').service-link Поиск тура
+            +e.info-links
+                a(href='#').info-link О компании
+                a(href='#').info-link Услуги
+                a(href='#').info-link Пресс-центр
+                a(href='#').info-link Офисы продаж
+                a(href='#').info-link Контакты
+    +b.sub-menu
+        +e.header Карта сайта
+        +e.service-links
+            a(href='#').service-link
+                img(src='../../assets/images/plane.png').service-link-ico
+                +e.service-link-text Авиабилеты
+            a(href='#').service-link
+                +e('img')(src='../../assets/images/train.png').service-link-ico
+                +e.service-link-text ЖД билеты
+            a(href='#').service-link
+                img(src='../../assets/images/search-tour.png').service-link-ico
+                +e.service-link-text Поиск тура
+        +e.nav
+            +e.nav-column
+                +e.nav-header Услуги
+                +e.nav-links
+                    a(href='#').nav-link
+                        +e.nav-link-text Аэроэкспресс
+                    a(href='#').nav-link
+                        +e.nav-link-text Гостиницы
+                    a(href='#').nav-link
+                        +e.nav-link-text Такси
+                    a(href='#').nav-link
+                        +e.nav-link-text Автобусы
+                    a(href='#').nav-link
+                        +e.nav-link-text Страхование
+                    a(href='#').nav-link
+                        +e.nav-link-text Корпоративное обслуживание
+            +e.nav-column
+                +e.nav-header Компания
+                +e.nav-links
+                    a(href='#').nav-link
+                        +e.nav-link-text О компании
+                    a(href='#').nav-link
+                        +e.nav-link-text Офисы продаж
+                    a(href='#').nav-link
+                        +e.nav-link-text Контактная информация
+            +e.nav-column
+                +e.nav-header Сервисы
+                +e.nav-links
+                    a(href='#').nav-link
+                        +e.nav-link-text Новости
+                    a(href='#').nav-link
+                        +e.nav-link-text Вопросы-ответы
+                    a(href='#').nav-link
+                        +e.nav-link-text Справочники
+        hr.horizontal
+        +e.contact
+            +e.contact-text Если у вас возникли вопросы, звоните нам по телефону:
+            +e.contact-number +7 (3022) 45-05-05
+            a(href='#').support Вопросы-ответы

@@ -1,0 +1,197 @@
+//
+   Created by Islam on 15.04.2019.
+
++b.content
+    +b.main-content
+        +e.breadcrumbs
+            a(href='#').breadcrumb Главная
+            a(href='#').breadcrumb Услуги
+            a(href='#').breadcrumb Заказ и бронирование авиабилетов
+        +e.reservation
+            +e.reservation-title Бронирование авиабилетов
+            +e.reservation-instruction Посмотреть инструкцию по бронированию
+            +e.reservation-description Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас. Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас. Вводный текст, где мы должны написать что дает возможность заказывать билеты именно через нас.
+            +b.banner
+                +e.slide
+                    img(src='../../assets/images/slide.png').slide-image
+                    a(href='#').slide-button Спецпредложение!
+                +e.slide
+                    img(src='../../assets/images/slide.png').slide-image
+                    a(href='#').slide-button Спецпредложение!
+                +e.slide
+                    img(src='../../assets/images/slide.png').slide-image
+                    a(href='#').slide-button Спецпредложение!
+            +b.reservation-form
+                +e.fill-progress
+                    +e(id = 'state-progress1').progress-state.current-state Выбор рейса
+                    +e.full-arrow
+                    +e(id = 'state-progress2').progress-state Информация о пассажирах
+                    +e.full-arrow
+                    +e(id = 'state-progress3').progress-state Оформление
+                    +e.full-arrow
+                    +e(id = 'state-progress4').progress-state Результат бронирования
+                +e(id='form').form
+                    +e#state1
+                        +e.flight-column
+                            +e.city-lable Город вылета
+                            +e.input-city
+                                input(type='text', placeholder='Откуда', autocomplete='off')#dispatch-city.input-city-field
+                                +e.input-city-ico
+                                ul#dispatch-city-select.input-city-select
+                                    li.input-city-select-item
+                                        +e.input-city-select-name Чита (Россия)
+                                        +e.input-city-select-abbreviation HTA
+                                    li.input-city-select-item
+                                        +e.input-city-select-name Читато (Ангола)
+                                        +e.input-city-select-abbreviation PGA
+                            +e.input-date
+                                input(type='text', placeholder='Дата вылета', autocomplete='off', readonly="readonly")#dispatch-date.input-date-field
+                        +e.flight-column
+                            +e.city-lable Город назначения
+                            +e.input-city
+                                input(type='text', placeholder='Куда', autocomplete='off')#arrival-city.input-city-field
+                                +e.input-city-ico
+                                ul#arrival-city-select.input-city-select
+                                    li.input-city-select-item
+                                        +e.input-city-select-name Москва/Внуково
+                                        +e.input-city-select-abbreviation VKO
+                                    li.input-city-select-item
+                                        +e.input-city-select-name Москва/Домодедово
+                                        +e.input-city-select-abbreviation DME
+                            +e.input-date
+                                input(type='text', placeholder='Дата возвращения', autocomplete='off', readonly="readonly")#arrival-date.input-date-field
+                        +e.oneway
+                            input(type='checkbox')#oneway-checkbox.oneway-checkbox В одну сторону
+                            label(for='oneway-checkbox').oneway-label В одну сторону
+                        +e.flight-number
+                            +e.flight-number-lable Рейс:
+                            input(type='text', disabled)#flight-number-input
+                            +e#flight-number-edit.flight-number-edit.flight-number-edit-unactive
+                    +e#state2
+                        +e.passenger-info
+                            +e.passenger-count
+                                +e.passenger-lable Количество пассажиров
+                                select#select-adults
+                                    option(value="0" style="display:none") Взрослые
+                                    - for(var i = 1; i <= 5; i++)
+                                      option( value = i ) #{i}
+                                select#select-children
+                                    option(value="0" style="display:none") Дети
+                                    - for(var i = 1; i <= 5; i++)
+                                      option( value = i ) #{i}
+                                select#select-babies
+                                    option(value="0" style="display:none") Младенцы
+                                    - for(var i = 1; i <= 5; i++)
+                                      option( value = i ) #{i}
+                            +e.passenger-class
+                                +e.passenger-lable Класс
+                                select#select-class
+                                    -var classes = ['Эконом', 'Первый', 'Бизнес']
+                                    -each el in classes
+                                        option #{el}
+                    +e#state3
+                        +e.payment-method Оплата с:
+                            input(type='radio', name='payment-method')#radio-card.radio
+                            label(for="radio-card") Пластиковая карта
+                            input(type='radio', name='payment-method')#radio-cash.radio
+                            label(for="radio-cash") Наличные
+                            input(type='radio', name='payment-method')#radio-cashless.radio
+                            label(for="radio-cashless") Безналичный расчет
+                        +e#form-submit.submit Готово
+                    +e#state4
+                        +e.result-title Бронирование успешно произведено
+                        +e#reservation-result-message.result-message
+
+                +b#flight-schedule.flight-schedule
+                    +e.title Чита - Москва (20.08.2013)
+                    +e.border
+                        +e.caption Прямые рейсы
+                        table#flight-schedule-table.schedule
+                            thead
+                                tr
+                                    th
+                                    th Рейс
+                                    th Вылет
+                                    th Прилет
+                                    th В пути
+                                    th Самолет
+                                    th Класс
+                            tbody
+                                tr
+                                    td
+                                        input(type='radio', name="table-radio")#radio-schedule-1.table-radio
+                                        label(for="radio-schedule-1")
+                                    td S7 - 120*
+                                    td 08:50 Чита
+                                    td 11:50 Домодедово
+                                    td 9:50
+                                    td БОИНГ 737-800
+                                    td Э / 4
+                                tr
+                                    td
+                                        input(type='radio', name="table-radio")#radio-schedule-2.table-radio
+                                        label(for="radio-schedule-2")
+                                    td S7 - 121*
+                                    td 08:50 Чита
+                                    td 11:50 Домодедово
+                                    td 9:50
+                                    td БОИНГ 737-800
+                                    td Э / 4
+                    +e.note * - рейсы с посадкой
+                    +e.controls
+                        +e#choose-flight-number-button-back.back.choose-flight-button Назад
+                        +e#choose-flight-number-button-confirm.confirm-unactive.choose-flight-button Подтвердить
+        +b.offer-banner
+            a(href='#').slide
+                img(src='../../assets/images/slide1.png').slide-image
+                +e.label
+                    +e.label-text Биллеты от
+                    +e.label-price 6450 ₽
+            a(href='#').slide
+                img(src='../../assets/images/slide2.png').slide-image
+                +e.label
+                    +e.label-text Биллеты от
+                    +e.label-price 6450 ₽
+    +b.side-bar
+        +e.tabs
+            a(href='#').tab.active Заказ билетов
+            a(href='#').tab Расписание рейсов
+        +e.info
+            +e.info-title Узнать где купить
+            +e.info-descroption У нас 16 офисов продаж, где вы можете купить билеты и получить консультации наших специалистов.
+            a(href='#').info-link
+                +e.info-link-text Пункты продаж билетов
+                img(src='../../assets/images/info-link-ico.png').info-link-ico
+        +e('form').request
+            +e.request-title Оставьте нам заявку
+            +e.request-description Оставьте нам сообщение с вашими потребностями и наши консультанты сами подберут вам лучшие условия и свяжутся с вами в течении 3-6 часов.
+            input(type='text', placeholder='Как вас зовут').request-field
+            input(type='text', placeholder='Контактный телефон').request-field
+            textarea(rows="3", placeholder='Что вас интересует?').request-field.multiline
+            input(type="submit").submit
+        +e.services
+            +e.services-title Услуги
+            a(href='#').service
+                +e.service-ico.service-ico-1
+                +e.service-text Аэроэкспресс
+            a(href='#').service
+                +e.service-ico.service-ico-2
+                +e.service-text Гостиницы
+            a(href='#').service
+                +e.service-ico.service-ico-3
+                +e.service-text Такси
+            a(href='#').service
+                +e.service-ico.service-ico-4
+                +e.service-text Автобусы
+            a(href='#').service
+                +e.service-ico.service-ico-5
+                +e.service-text Страхование
+        +e.goodtoknow
+            +e.goodtoknow-title Полезно знать
+            a(href='#').goodtoknow-link
+                +e.goodtoknow-link-ico.goodtoknow-link-ico-1
+                +e.goodtoknow-link-text Авиакомпании
+            a(href='#').goodtoknow-link
+                +e.goodtoknow-link-ico.goodtoknow-link-ico-2
+                +e.goodtoknow-link-text Аэропорты
+

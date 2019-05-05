@@ -1,0 +1,307 @@
+.side-bar{
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 276px;
+  vertical-align: top;
+
+  &__tabs{
+    margin-top: 12px;
+  }
+
+  &__tab{
+    margin-left: 27px;
+    display: block;
+    padding: 12px 0 12px 27px;
+    margin-top: 3px;
+    font-size: 19px;
+    font-family: "Arial";
+    color: rgb(51, 51, 51);
+    line-height: 1.2;
+    border-radius: 10px;
+    background-color: rgb(248, 245, 235);
+    width: 222px;
+    height: 44px;
+    position: relative;
+
+    &:hover{
+      background-color: #ffdae3;
+      color: rgb(51, 51, 51);
+    }
+  }
+
+  .active{
+    background-color: rgb(255, 220, 129);
+
+    &:before{
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 44px;
+      position: absolute;
+      font-size: 20px;
+      left: -18px;
+      top: 3px;
+      background: url('../../assets/images/tab-active.png') no-repeat;
+    }
+  }
+
+  &__info{
+    margin: 50px 29px 0 27px;
+
+    &-title{
+      font-size: 20px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+    }
+
+    &-descroption{
+      font-size: 15px;
+      font-family: "Arial";
+      color: rgb(102, 102, 102);
+      line-height: 1.2;
+    }
+
+    &-link{
+      position: relative;
+
+      &:hover{
+        text-decoration: none;
+      }
+
+      &-text{
+        font-size: 14px;
+        font-family: "Arial";
+        color: rgb(19, 146, 215);
+        line-height: 1.286;
+        border-bottom: 1px solid rgb(19, 146, 215);
+      }
+
+      &-ico{
+        position: relative;
+        left: 12px;
+        bottom: 9px;
+      }
+    }
+  }
+
+  &__request{
+    border-top: 1px dashed #d0d1d2;
+    border-bottom: 1px dashed #d0d1d2;
+    margin-top: 30px;
+    background-color: #eaf1ff;
+    padding: 15px 29px 19px 27px;
+
+    &-title{
+      font-size: 20px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+      line-height: 1;
+    }
+
+    &-description{
+      margin-top: 20px;
+      font-size: 15px;
+      font-family: "Arial";
+      color: rgb(102, 102, 102);
+      line-height: 1.2;
+    }
+
+    &-field{
+      margin-top: 20px;
+      height: 42px;
+      width: 220px;
+      border: 1px solid rgb(193, 191, 183);
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.12);
+
+      font-size: 19.444px;
+      font-family: "Arial";
+      color: rgb(153, 153, 153);
+      line-height: 1.2;
+
+      padding-left: 10px;
+    }
+  }
+
+  &__submit{
+    margin-top: 10px;
+    border: 3px solid rgb(195, 218, 227);
+    border-radius: 10px;
+    width: 135px;
+    height: 44px;
+    background-image: -webkit-linear-gradient(90deg,#f8c746 0%,#1791d4 0%,#56bfef 100%);
+    box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.12);
+
+    font-size: 16.667px;
+    font-family: "Arial";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+
+    cursor: pointer;
+  }
+
+  &__services{
+    background-color: rgb(248, 245, 235);
+    padding: 15px 29px 15px 27px;
+    border-bottom: 1px dashed #d0d1d2;
+
+    &-title{
+      font-size: 20px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+      border-bottom: 1px solid #eceae4;
+      padding-bottom: 8px;
+    }
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  &__service{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eceae4;
+
+    &:last-child{
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &:hover &-text{
+      color: rgb(219, 33, 79);
+    }
+
+    &:hover .service-ico-1{
+      background-image: url('../../assets/images/service-ico-1-active.png');
+    }
+
+    &:hover .service-ico-2{
+      background-image: url('../../assets/images/service-ico-2-active.png');
+    }
+
+    &:hover .service-ico-3{
+      background-image: url('../../assets/images/service-ico-3-active.png');
+    }
+
+    &:hover .service-ico-4{
+      background-image: url('../../assets/images/service-ico-4-active.png');
+    }
+
+    &:hover .service-ico-5 {
+      background-image: url('../../assets/images/service-ico-5-active.png');
+    }
+
+    &-ico{
+      position: relative;
+      top: 1px;
+
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+
+    &-text{
+      margin-left: 10px;
+      font-size: 20px;
+      font-family: "Arial";
+      color: rgb(19, 146, 215);
+    }
+  }
+
+  &__goodtoknow{
+    padding: 15px 29px 15px 27px;
+
+    &-title{
+      font-size: 20px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+      border-bottom: 1px solid #eceae4;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    &-link{
+      display: block;
+      border-bottom: 1px solid #eceae4;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      &:last-child{
+        border-bottom: none;
+        padding-bottom: 10px;
+      }
+
+      &-ico{
+        position: relative;
+        top: 1px;
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+      }
+
+      &-text{
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: "Arial";
+        color: rgb(134, 134, 134);
+      }
+
+      &:hover &-text{
+        color: rgb(219, 33, 79);
+      }
+
+      &:hover .goodtoknow-link-ico-1{
+        background-image: url('../../assets/images/good-to-know-1-active.png');
+      }
+
+      &:hover .goodtoknow-link-ico-2{
+        background-image: url('../../assets/images/good-to-know-2-active.png');
+      }
+    }
+  }
+}
+
+.service-ico{
+  &-1{
+    background-image: url('../../assets/images/service-ico-1.png');
+  }
+
+  &-2{
+    background-image: url('../../assets/images/service-ico-2.png');
+  }
+
+  &-3{
+    background-image: url('../../assets/images/service-ico-3.png');
+  }
+
+  &-4{
+    background-image: url('../../assets/images/service-ico-4.png');
+  }
+
+  &-5{
+    background-image: url('../../assets/images/service-ico-5.png');
+  }
+}
+
+.goodtoknow-link-ico{
+  &-1{
+    background-image: url('../../assets/images/good-to-know-1.png');
+  }
+
+  &-2{
+    background-image: url('../../assets/images/good-to-know-2.png');
+  }
+}
+
+.multiline{
+  padding-top: 10px;
+  height: 82px;
+}

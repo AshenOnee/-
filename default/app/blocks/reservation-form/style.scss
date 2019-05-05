@@ -1,0 +1,571 @@
+@import "../../config/variables";
+
+.reservation-form{
+  &__fill-progress{
+    font-size: 0;
+  }
+
+  &__progress-state{
+    border-radius: 10px;
+    background-color: rgb(248, 245, 235);
+    padding: 12px 14px;
+    display: inline-block;
+    font-size: 12px;
+    font-family: "Arial";
+    color: rgb(51, 51, 51);
+    line-height: 1.2;
+  }
+
+  &__full-arrow{
+    mask-image: url('../../assets/images/full-arrow.svg');
+    -webkit-mask-image: url('../../assets/images/full-arrow.svg');
+    background-color: #db214f;
+    width: 11px;
+    height: 11px;
+    background-size: 11px 11px;
+    display: inline-block;
+    margin: 0 6px 0 6px;
+    top: 3px;
+    position: relative;
+  }
+
+  &__form{
+    margin-top: 10px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    background-color: rgb(255, 210, 91);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    font-size: 0;
+  }
+
+  &__flight-column{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__city-lable{
+    font-size: 12px;
+    font-family: "Arial";
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  &__input-city-select-item:hover &__input-city-select-name{
+    color: #ffffff;
+  }
+
+  &__input-city-select-item:hover &__input-city-select-abbreviation{
+    color: #ffffff;
+  }
+
+  &__input{
+    &-city{
+      margin-top: 8px;
+      position: relative;
+      cursor: pointer;
+
+      &-ico{
+        top: 9px;
+        left: 10px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+        background-image: url("../../assets/images/locate.svg");
+        z-index: 9997;
+      }
+
+      &-field{
+        width: 266px;
+        cursor: pointer;
+        font-size: 19px;
+        font-family: "Arial";
+        line-height: 1.2;
+
+        border: 1px solid rgb(193, 191, 183);
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.12);
+
+        padding: 10px 12px 10px 35px;
+        max-height: 44px;
+        z-index: 9996;
+        position: relative;
+
+        &:focus{
+          border: 1px solid rgba(82,168,236,0.8);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
+        }
+      }
+
+      &:hover &__input-city-field{
+        border: 1px solid #1392d7;
+      }
+
+      &-select{
+        display: none;
+        position: absolute;
+        padding-left: 0;
+        z-index: 9995;
+
+        padding-top: 22px;
+        background-color: #ffffff;
+        border-radius: 0 0 10px 10px;
+        border: 1px solid rgb(193, 191, 183);
+        width: 266px;
+        overflow: hidden;
+        top:20px;
+
+        &-item{
+          background-color: #ffffff;
+          width: 100%;
+          padding: 4px 15px 4px 10px;
+
+          &:hover{
+            background-color: #299edc;
+          }
+        }
+
+        &-name{
+          font-size: 19px;
+          font-family: "Arial";
+          color: rgb(153, 153, 153);
+          line-height: 1.2;
+          display: inline-block;
+          width: 190px;
+        }
+
+        &-abbreviation{
+          font-size: 19px;
+          font-family: "Arial";
+          color: #000000;
+          line-height: 1.2;
+          display: inline-block;
+        }
+      }
+    }
+
+    &-select{
+      font-size: 19px;
+      font-family: "Arial";
+      color: #000000;
+      line-height: 1.2;
+    }
+
+    &-date{
+      margin-top: 8px;
+      cursor: pointer;
+      position: relative;
+      font-size: 0;
+
+      &-field{
+        width: 266px;
+        cursor: pointer;
+        font-size: 19px;
+        font-family: "Arial";
+        color: #000000;
+        line-height: 1.2;
+
+        border: 1px solid rgb(193, 191, 183);
+        border-radius: 10px;
+        box-shadow: inset 2px 0px 9px 0 rgba(0,0,0,.12);
+        clip-path: inset(-5px 0px -5px -5px);
+
+        padding: 9px 0 9px 12px;
+        max-height: 44px;
+        overflow: hidden;
+
+        background:#fff url('../../assets/images/calendar.png')  95% 50% no-repeat ;
+
+        &:focus{
+          border: 1px solid rgba(82,168,236,0.8);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
+          background:#fff url('../../assets/images/calendar-active.png')  100% 50% no-repeat ;
+        }
+      }
+
+      &:hover &-field{
+        border: 1px solid #1392d7;
+        background:#fff url('../../assets/images/calendar-active.png')  100% 50% no-repeat ;
+      }
+    }
+  }
+
+  &__oneway{
+    margin-top: 15px;
+
+    &-checkbox{
+      opacity: 0;
+      z-index: -1;
+      position: absolute;
+
+      & + label {
+        position: relative;
+        padding: 0 0 0 30px;
+        cursor: pointer;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: 0;
+
+          background: #ffffff;
+          border: 1px solid rgb(193, 191, 183);
+          border-radius: 8px;
+          box-shadow: inset 0 0 9px 0 rgba(0, 0, 0, 0.12);
+          width: 24px;
+          height: 23px;
+        }
+      }
+
+      &:checked + label:before {
+        padding: 4px;
+        font-size: 14px;
+        content: '✔';
+        color: #e64a49;
+      }
+    }
+
+    &-label{
+      margin-left: 5px;
+      font-size: 12px;
+      font-family: "Arial";
+      color: rgb(102, 102, 102);
+      font-style: italic;
+      line-height: 1.2;
+    }
+  }
+
+  &__flight-number{
+    margin-top: 10px;
+
+    &-lable{
+      vertical-align: middle;
+      display: inline-block;
+      font-size: 16px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+      line-height: 1.2;
+    }
+
+    & > input{
+      display: none;
+      width: 100px;
+      cursor: pointer;
+      font-size: 19px;
+      font-family: "Arial";
+      line-height: 1.2;
+
+      border: 1px solid rgb(193, 191, 183);
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.12);
+
+      padding: 5px 6px;
+      max-height: 30px;
+      z-index: 9996;
+      position: relative;
+
+      vertical-align: middle;
+      margin-left: 5px;
+
+      &:disabled{
+        background-color: #ffffff;
+      }
+
+      &:focus{
+        border: 1px solid rgba(82,168,236,0.8);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
+      }
+
+      &:hover {
+        border: 1px solid #1392d7;
+      }
+    }
+
+    &-edit{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+
+      vertical-align: middle;
+      border: 1px solid rgb(193, 191, 183);
+      margin-left: 5px;
+    }
+  }
+
+  .flight-number-edit-unactive{
+    cursor: not-allowed;
+    background: #dfdfdf url('../../assets/images/pencil-edit-button.png') 50% 50% no-repeat;
+    background-size: 20px 20px;
+  }
+
+  .flight-number-edit-active{
+    cursor: pointer;
+    background: #ffffff url('../../assets/images/pencil-edit-button.png') 50% 50% no-repeat;
+    background-size: 20px 20px;
+  }
+
+  &__flight-number-edit:hover{
+    border: 1px solid #1392d7;
+  }
+
+  &__passenger{
+    &-info{
+      margin-top: 15px;
+    }
+
+    &-count{
+      display: inline-block;
+      width: 433px;
+
+      &-select select {
+        background: transparent;
+        border: none;
+        line-height: 1.2;
+        font-family: "Arial";
+        font-size: 17px;
+        padding: 5px; /* If you add too much padding here, the options won't show in IE */
+        width: 148px;
+        height: 42px;
+      }
+    }
+
+    &-lable{
+      font-size: 12px;
+      font-family: "Arial";
+      color: rgb(51, 51, 51);
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    &-class{
+      display: inline-block;
+      width: 164px;
+    }
+  }
+
+  &__payment-method{
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "Arial";
+    color: rgb(98, 98, 98);
+    line-height: 1.286;
+  }
+
+  &__radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &+label {
+      margin-left: 15px;
+      position: relative;
+      padding: 0 0 0 20px;
+      cursor: pointer;
+      font-style: italic;
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 13px;
+        height: 13px;
+        box-shadow: inset 0px 1px 1px 0px rgba(173, 168, 151, 0.75);
+        border-radius: 50%;
+        background: #FFF;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 13px;
+        height: 13px;
+        box-shadow: inset 0px 1px 1px 0px rgba(173, 168, 151, 0.75);
+        border-radius: 50%;
+        background: #FFF;
+      }
+    }
+
+    &:hover + label:before {
+      background-color: #db214f;
+    }
+
+    &:checked + label:before {
+      background-color: #2fa5e0;
+    }
+  }
+
+  &__submit{
+    margin-top: 10px;
+    width: 146px;
+    height: 49px;
+    border: 3px solid rgb(195, 218, 227);
+    background-image: -webkit-linear-gradient( 90deg, rgb(248,199,70) 0%, rgb(23,145,212) 0%, rgb(86,191,239) 100%);
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    display: none;
+
+    padding: 12px;
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  &__result{
+    &-title{
+      font-size: 16px;
+      font-family: "Arial";
+      color: #000000;
+      font-weight: bold;
+    }
+
+    &-message{
+      font-size: 14px;
+      font-family: "Arial";
+      color: #404040;
+      white-space: pre;
+    }
+  }
+}
+
+::-webkit-inner-spin-button {
+  display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0;
+  display: block;
+  color: rgba(0,0,0,0);
+  margin-top: -9px;
+  margin-bottom: -9px;
+  margin-right: 0;
+  width: 28px;
+  height: 36px;
+}
+
+.current-state{
+  background-color: #ffd25b;
+}
+
+.ui-datepicker{
+  z-index: 9997 !important;
+  border-radius: 10px;
+  padding: 0px;
+  overflow: hidden;
+  width: 266px;
+  border: none;
+
+  &-header{
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(102, 102, 102);
+    line-height: 1.125;
+    text-align: center;
+
+    font-weight: lighter;
+
+    background-color: #f8f5eb;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #e3c473;
+  }
+
+  & table{
+    margin: 7px;
+    width: 250px;
+  }
+
+  & th{
+    padding: 5px;
+    font-weight: lighter;
+    color: rgb(102, 102, 102);
+  }
+
+  &-week-end{
+    color: #e64a49 !important;
+
+    & a{
+      color: #e64a49 !important;
+    }
+  }
+
+  & td a{
+    border: none !important;
+    text-align: center;
+
+    font-size: 14px;
+    font-family: "Arial";
+    color: rgb(102, 102, 102);
+    line-height: 1.286;
+  }
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  background-color: #f8f5eb;
+  text-align: center;
+}
+
+td.ui-datepicker-current-day > a.ui-state-active{
+  background: #ffd25b !important;
+  color: rgb(102, 102, 102) !important;
+}
+
+.ui-state-active{
+  background: #ffd25b;
+  color: rgb(102, 102, 102);
+}
+
+.ui-selectmenu-button.ui-button{
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 8px;
+
+  border: 1px solid rgb(193, 191, 183);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 9px 0px rgba(0, 0, 0, 0.12);
+  width: 124px;
+  height: 42px;
+
+  overflow: hidden;
+  background:#ffffff url('../../assets/images/select down.png') no-repeat 96% 50%;
+
+  line-height: 1.2;
+  font-family: "Arial";
+  font-size: 17px;
+  padding: 5px; /* If you add too much padding here, the options won't show in IE */
+}
+
+ul.ui-menu > li.ui-menu-item{
+  & > div.ui-state-active{
+    background-color: #299edc;
+    border: none;
+  }
+
+  & > div.ui-menu-item-wrapper{
+    text-align: center;
+  }
+}
+
+ul#select-class-menu > li.ui-menu-item > div.ui-menu-item-wrapper{
+  text-align: left;
+}
+
+span.ui-selectmenu-button > span.ui-selectmenu-text{
+  padding: 5px;
+  font-size: 16px;
+}
+
+#state2, #state3, #state4{
+  display:none;
+}

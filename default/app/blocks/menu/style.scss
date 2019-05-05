@@ -1,0 +1,88 @@
+@import "../../config/variables";
+@import "../../config/fonts";
+
+.menu{
+  background-color: #2f4960;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  position: relative;
+  z-index: 9999;
+
+  &__container{
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__home{
+    display: inline-block;
+  }
+
+  &__map{
+    margin-left: 30px;
+    margin-right: 35px;
+    display: inline-block;
+    color: #bce1ff;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &-text{
+      display: inline-block;
+      border-bottom: 1px dotted #bce1ff;
+    }
+
+    &-rectangle{
+      display: inline-block;
+      font-size: 12px;
+    }
+
+    &:hover &-text{
+      color: #ffffff;
+      border-bottom: 1px dotted #ffffff;
+    }
+
+    &:hover &-rectangle{
+      color: #ffffff;
+    }
+  }
+
+  &__service-links{
+    display: inline-block;
+  }
+
+  &__service-link{
+    margin: 0 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ffffff;
+
+    &:hover{
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+
+  &__info-links{
+    float: right;
+    display: inline-block;
+  }
+
+  &__info-link{
+    margin: 0 8px;
+    color: #ffffff;
+    font-size: 15px;
+    border-bottom: 1px solid #ffffff;
+
+    &:hover{
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+
+}
+
+

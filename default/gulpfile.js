@@ -53,20 +53,26 @@ var paths = {
       css: {
         src: [
           './app/vendor/bootstrap/dist/css/bootstrap.min.css',
-          './app/vendor/font-awesome/web-fonts-with-css/css/fontawesome.min.css'
+          './app/vendor/font-awesome/web-fonts-with-css/css/fontawesome.min.css',
+          './app/vendor/slick-carousel/slick/slick-theme.css',
+          './app/vendor/jquery-ui/jquery-ui.min.css'
         ],
         dest: './app/assets/css'
       },
       js: {
         src: [
           './app/vendor/jquery/dist/jquery.min.js',
-          './app/vendor/bootstrap/dist/js/bootstrap.min.js'
+          './app/vendor/bootstrap/dist/js/bootstrap.min.js',
+          './app/vendor/slick-carousel/slick/slick.min.js',
+            './app/vendor/jquery-ui/jquery-ui.min.js',
+            './app/vendor/jquery-ui/datepicker-ru.js',
         ],
         dest: './app/assets/js'
       },
       fonts: {
         src: [
-          './app/vendor/font-awesome/fonts/*.*'
+          './app/vendor/font-awesome/fonts/*.*',
+          './app/fonts/*.*'
         ],
         dest: './app/assets/fonts'
       }

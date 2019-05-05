@@ -1,0 +1,55 @@
+.header{
+
+  &__container{
+    width: 1000px;
+    margin: 0 auto;
+
+    padding: 60px 30px 20px 30px;
+
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(244, 248, 249);
+  }
+
+  &__logo{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__description{
+    margin-left: 45px;
+    display: inline-block;
+    width: 353px;
+    font-size: 12px;
+    font-family: "Arial";
+    color: rgb(102, 102, 102);
+    font-style: italic;
+    vertical-align: middle;
+  }
+
+  &__contact{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  &__contact{
+    &-text{
+      font-size: 12px;
+      font-family: "Arial";
+      color: rgb(102, 102, 102);
+      line-height: 1.167;
+
+    }
+
+    &-number{
+      margin-top: 5px;
+      font-size: 19px;
+      font-weight: bold;
+      color: rgb(47, 73, 96);
+      line-height: 1.167;
+    }
+  }
+}
+
+

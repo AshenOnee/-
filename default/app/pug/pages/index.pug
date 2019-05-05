@@ -1,13 +1,14 @@
-include ../../../node_modules/bemto.pug/bemto.pug
+include ../template/bem.pug
+include ../template/link.pug
+
 doctype html
 html
     head
         meta(charset="utf-8")
-        meta(title="index")
+        +style()
+        +script()
     body
-        -var list = ["main"]
-        +b('ul').index-list.g
-            each item in list
-                +e('li').item
-                    a( href = item + '.html' )= item  
- 
+        include ../template/menu-group
+        include ../template/header
+        include ../template/content
+        include ../template/footer

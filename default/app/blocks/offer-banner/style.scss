@@ -1,0 +1,42 @@
+.offer-banner{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 651px;
+  height: 172px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  z-index: 50;
+
+  &__slide{
+    display: inline-block;
+    position:relative;
+
+    &-image{
+
+    }
+  }
+
+  &__label{
+    position: absolute;
+    left: 440px;
+    top: 120px;
+
+    &-text{
+      font-size: 16px;
+      font-family: "Arial";
+      color: rgb(219, 33, 79);
+      line-height: 1.125;
+    }
+
+    &-price{
+      margin-left: 10px;
+      border-radius: 6px;
+      background-color: rgb(219, 33, 79);
+      padding: 8px;
+      font-family: "Arial";
+      font-size: 24px;
+      color: #ffffff;
+    }
+  }
+}

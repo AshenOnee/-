@@ -31,6 +31,7 @@
     "pug": "^2.0.3"
   },
   "dependencies": {
-    "gulp4": "^4.0.2"
+    "gulp4": "^4.0.2",
+    "slick-carousel": "^1.8.1"
   }
 }
